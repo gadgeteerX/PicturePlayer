@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
@@ -20,8 +21,9 @@ namespace PicturePlayer
     /// </summary>
     public partial class MainWindow : Window
     {
-        string spath = @"d:\repos2\PicturePlayer\aaa.txt";
+        string spath = Directory.GetCurrentDirectory();
         string[] sPlaylists = new string[] { };                //playlists in current directory
+        int iPlaylist_index;
         string[] strImages = new string[] { };                 //pictures in current playlist
         int index;
 
@@ -29,15 +31,32 @@ namespace PicturePlayer
         {
             InitializeComponent();
 
-            GetPlaylists();
-            cmbPlaylist.SelectedIndex = 0;
+            MakePlaylist();             //find all the playlists that exist
+            GetPlaylists();             //load the picture filenames in the first playlist
+        }
+
+
+        private void MakePlaylist()
+        {
+            //make a default playlist for a newly-installed program
+            //writing the current directory of installation into the playlist
+            if (Directory.Exists(spath + @"\Food"))
+            {
+                string[] sfiles = Directory.GetFiles(spath + @"\Food");
+                if (sfiles.Length > 0 &&
+                        File.Exists(spath + @"\Food.txt") == false)
+                {
+                    File.WriteAllLines(spath + @"\Food.txt", sfiles);
+                }
+            }
         }
 
         private void GetPlaylists()
         {
             //find all playlists (*.txt) in application directory
-            string[] sLists = Directory.GetFiles(@"d:\repos2\PicturePlayer");
+            string[] sLists = System.IO.Directory.GetFiles(spath);
             string sfilename;
+
             foreach (string s in sLists)
             {
                 if (s.IndexOf(".txt") > 0)          
@@ -49,18 +68,8 @@ namespace PicturePlayer
                     cmbPlaylist.Items.Add(sfilename);               //add filename to combo
                 }
             }
-        }
 
-        private void GetPictures()
-        {
-            //list out all pictures in txtList
-            strImages = File.ReadAllLines(spath);
-            index = -1;
-            txtList.Text = "";
-            foreach (string s in strImages)
-            {
-                txtList.Text += s + "\n";
-            }
+            cmbPlaylist.SelectedIndex = 0;
         }
 
         private void ShowNextImage()
@@ -73,11 +82,12 @@ namespace PicturePlayer
             {
                 ImageSource imageSource = new BitmapImage(new Uri(strImages[index]));
                 imgViewer.Source = imageSource;
-                txtStatus.Text = "Picture " + (index+1).ToString() + ")    " + strImages[index];
+                txtStatus.Text = (index+1).ToString() + ")    " 
+                                    + System.IO.Path.GetFileName(strImages[index]) ;
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "error opening image"
+                MessageBox.Show(e.Message, "Error opening picture"
                     , MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -92,7 +102,8 @@ namespace PicturePlayer
             {
                 ImageSource imageSource = new BitmapImage(new Uri(strImages[index]));
                 imgViewer.Source = imageSource;
-                txtStatus.Text = "Picture " + (index+1).ToString() + ")    " + strImages[index];
+                txtStatus.Text = (index+1).ToString() + ")    "
+                                    + System.IO.Path.GetFileName(strImages[index]);
             }
             catch (Exception e)
             {
@@ -124,9 +135,9 @@ namespace PicturePlayer
         private void OpenCmdExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog o = new OpenFileDialog();
-            o.DefaultDirectory = @"d:\repos2\PicturePlayer";
+            o.DefaultDirectory = spath;
             o.Filter = "Text files | *.txt";
-            o.FileName = "aaa.txt";
+            o.FileName = sPlaylists[iPlaylist_index];
             if (o.ShowDialog() == true)
             {
                 txtList.Text = File.ReadAllText(o.FileName);
@@ -141,9 +152,9 @@ namespace PicturePlayer
         private void SaveCmdExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog s = new SaveFileDialog();
-            s.DefaultDirectory = @"d:\repos2\PicturePlayer";
+            s.DefaultDirectory = spath;
             s.Filter = "Text files | *.txt";
-            s.FileName = "aaa.txt";
+            s.FileName = sPlaylists[iPlaylist_index];
             s.OverwritePrompt = false;
             if (s.ShowDialog() == true)
             {
@@ -155,10 +166,19 @@ namespace PicturePlayer
         {
             int i = Convert.ToInt32((sender as ComboBox)?.SelectedIndex);
 
-            spath = sPlaylists[i];
-            GetPictures();
+            iPlaylist_index = i;
+            strImages = File.ReadAllLines(sPlaylists[iPlaylist_index]);
+            index = -1;
+            txtList.Text = "";
+            foreach (string s in strImages)
+            {
+                txtList.Text += s + "\n";
+            }
+
             ShowNextImage();
         }
+
+
 
         private void btnPlayPrev_Click(object sender, RoutedEventArgs e)
         {
