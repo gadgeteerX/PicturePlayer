@@ -15,25 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2EFFAE27F62F4E4F80A144569713BD4B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BA5608BFE4F349C4BA43B93BDF98BB12"
+        "MsmKey" = "8:_607F010BFD954868B06E05F327E1A227"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EB12C3E686BB4670BE7A0A59419F73A3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EF029A595AD449D090E6D39FB62C9F97"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -140,72 +128,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2EFFAE27F62F4E4F80A144569713BD4B"
-            {
-            "SourcePath" = "8:..\\Food\\RoastGoose.jpg"
-            "TargetName" = "8:RoastGoose.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_7BAE524E7051440DA163A0AD7F9193E6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BA5608BFE4F349C4BA43B93BDF98BB12"
-            {
-            "SourcePath" = "8:..\\Food\\YatLokGoose.jpg"
-            "TargetName" = "8:YatLokGoose.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_7BAE524E7051440DA163A0AD7F9193E6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB12C3E686BB4670BE7A0A59419F73A3"
             {
             "SourcePath" = "8:C:\\Users\\wlee0\\Downloads\\Smiley.ico"
             "TargetName" = "8:Smiley.ico"
             "Tag" = "8:"
             "Folder" = "8:_1B295801CBF14D64A7BC5E36593BCE38"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EF029A595AD449D090E6D39FB62C9F97"
-            {
-            "SourcePath" = "8:..\\Food\\Steamhut.jpg"
-            "TargetName" = "8:Steamhut.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_7BAE524E7051440DA163A0AD7F9193E6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -236,17 +164,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_7BAE524E7051440DA163A0AD7F9193E6"
-                    {
-                    "Name" = "8:Food"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_7A987B917B2B4A8586D3130DE132DFD5"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_895170FFF8A64F1D8B1D22462A5DAAD7"
@@ -835,6 +752,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_607F010BFD954868B06E05F327E1A227"
+            {
+            "SourcePath" = "8:..\\PicturePlayer\\obj\\Debug\\net8.0-windows\\apphost.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1B295801CBF14D64A7BC5E36593BCE38"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:PublishItems"
+            "OutputProjectGuid" = "8:{A7197695-2371-4C84-8A7F-3E0C04979D96}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F2578D3B61184FEE980E2CFCE7E8959F"
             {
             "SourcePath" = "8:..\\PicturePlayer\\obj\\Debug\\net8.0-windows\\apphost.exe"

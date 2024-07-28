@@ -33,6 +33,8 @@ namespace PicturePlayer
 
             MakePlaylist();             //find all the playlists that exist
             GetPlaylists();             //load the picture filenames in the first playlist
+
+            LoadHelpText();
         }
 
 
@@ -40,15 +42,22 @@ namespace PicturePlayer
         {
             //make a default playlist for a newly-installed program
             //writing the current directory of installation into the playlist
-            if (Directory.Exists(spath + @"\Food"))
+            string[] sfiles = Directory.GetFiles(spath + @"\Resources");
+            string[] spictures = new string[] { };
+            foreach(string s in sfiles) 
             {
-                string[] sfiles = Directory.GetFiles(spath + @"\Food");
-                if (sfiles.Length > 0 &&
-                        File.Exists(spath + @"\Food.txt") == false)
+                if (s.IndexOf(".jpg") > 0)      //look for *.jpg pictures only
                 {
-                    File.WriteAllLines(spath + @"\Food.txt", sfiles);
+                    Array.Resize(ref spictures, spictures.Length + 1);
+                    spictures[spictures.Length - 1] = s;
                 }
+            } 
+            if (spictures.Length > 0 &&
+                    File.Exists(spath + @"\Food.txt") == false)
+            {
+                File.WriteAllLines(spath + @"\Food.txt", spictures);
             }
+
         }
 
         private void GetPlaylists()
@@ -70,6 +79,25 @@ namespace PicturePlayer
             }
 
             cmbPlaylist.SelectedIndex = 0;
+        }
+
+        private void LoadHelpText()
+        {
+            try
+            {
+                string strHelpPath = spath + @"\Resources\Help.txt";
+                string[] strHelp = File.ReadAllLines(strHelpPath);
+                foreach (string s in strHelp)
+                {
+                    txtHelp.Text += s + "\n";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error reading help.txt"
+                    ,MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
         private void ShowNextImage()

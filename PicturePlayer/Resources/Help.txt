@@ -1,0 +1,8 @@
+PicturePlayer
+-------------
+
+Create a text (*.txt) file at the application directory and add the full directory location of each picture to be included. 
+
+Every text file detected at startup is treated as a separate playlist.
+
+An example playlist Food.txt and pictures are supplied.

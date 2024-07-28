@@ -59,5 +59,51 @@ namespace PicturePlayer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PicturePlayer
+        ///-------------
+        ///
+        ///Create a text (*.txt) file at the application directory and add the full directory location of each picture to be included. 
+        ///
+        ///Every text file detected at startup is treated as a separate playlist.
+        ///
+        ///An example playlist food.txt and pictures are supplied..
+        /// </summary>
+        internal static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] RoastGoose {
+            get {
+                object obj = ResourceManager.GetObject("RoastGoose", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Steamhut {
+            get {
+                object obj = ResourceManager.GetObject("Steamhut", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] YatLokGoose {
+            get {
+                object obj = ResourceManager.GetObject("YatLokGoose", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

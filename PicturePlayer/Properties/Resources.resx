@@ -117,4 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="RoastGoose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoastGoose.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Steamhut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steamhut.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YatLokGoose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YatLokGoose.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

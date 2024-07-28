@@ -100,6 +100,14 @@
                 </Grid>
 
             </TabItem>
+            <TabItem Header="Help">
+                <Grid>
+                    <TextBox x:Name="txtHelp" Margin="5" Background="AliceBlue" 
+                             AcceptsReturn="True"
+                             VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
+                             FontSize="16"/>
+                </Grid>
+            </TabItem>
         </TabControl>
     </DockPanel>
 
